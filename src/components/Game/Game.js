@@ -7,32 +7,20 @@ export class Game extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {value: ''};
-    this.state ={id:'' , move :'' , login:''  }
+    this.state = { value:''};
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this)
-    
   }
   
   handleChange(event) {
       if(event.target.value > 4 || isNaN(event.target.value) ){
           alert("The amount of entered horses are invalid")
       }else{
-        this.setState({value: event.target.value});
-        event.preventDefault();
+       this.setState({value: event.target.value});
       }
   }
   
-  handleClick(move,login){ 
-
-    if(!move === 75){
-      this.setState({ progress: move + Math.random() * 10});
-    }else{
-       alert(login , "is the winner"); 
-    }
-  }
-
-  render() {
+  render()
+  {
     return (
       <section id="hourse">
       <div className="Background">
@@ -42,7 +30,7 @@ export class Game extends Component {
         <button id = "StartRace" onClick ={this.handleClick} >Start Race</button>
         <div>
         <div className = "Race" >
-            <HorseList value = {this.state.value} handle ={this.handleClick()}/>
+            <HorseList value = {this.state.value} />
       </div>
         </div>   
       </div>

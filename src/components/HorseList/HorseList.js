@@ -8,19 +8,8 @@ export class HorseList extends Component {
 
   constructor(props){
     super(props)
-    this.handleClick = this.handleClick.bind(this)
     this.state = { progress: 0 }
   }
-
-  handleClick(move,login){ 
-
-    if(!move === 75){
-      this.setState({ progress: move + Math.random() * 100});
-    }else{
-       alert(login , "is the winner"); 
-    }
-  }
-
   
   render() {
 
@@ -34,6 +23,7 @@ export class HorseList extends Component {
         return Random;
     }
 
+
     function Color(index){
         var color = ["red","green","black","yellow"];
         var progressbar = [];
@@ -43,27 +33,23 @@ export class HorseList extends Component {
       return progressbar;
     }
 
-    console.log(Color(0));
+   
     return (  
-     
-      
             <div className = "HorseList" > 
-             {
-              if (this.props.start){
+            {  
                GenerateHorse(this.props.value).map((element, i) => { 
                   return  <Horse 
                             Login = {data[element].login}
                             Id = {data[element].id}
                             avator = {data[element].avatar_url} 
                             color = {Color(this.props.value)[i]}
-                            progress = {handleClick(this.state.progress,data[element].login)}
+                            progress = {5}
                             /> 
                 }          
               )
-            }
-          }
+          }   
             </div>
-      }
     )
-  }
+ 
+}
 }

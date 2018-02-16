@@ -9,7 +9,7 @@ export class Horse extends Component {
       < div className="RaceTrackBackground">
         <img className = "picture" id= {this.props.Id} src = {this.props.avator} alt = "avator"/> 
         <div className = "ProgressBar" >
-        <Progress className = "Progress" color = {this.props.color} completed={75}/>  
+        <Progress className = "Progress" color = {this.props.color} completed={this.props.progress}/>  
         </div>
       </div>
     );
