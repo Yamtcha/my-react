@@ -1,0 +1,6 @@
+{
+    "compilerOptions": {
+        "types": ["intern"],
+        "lib": [ "es2015" ]
+    }
+}
